@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- style -->
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+
+    
+    <!-- lib -->
+    <script src="assets/js/lib/vue.min.js"></script>
+    <script src="assets/js/lib/lodash.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="element">
+            <div 
+                v-for="i in element.scene.group"
+                :class="`scene ${i.get()._class}`"
+                :style="i.get().style"
+            >
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/main/main.js" type="module"></script>
+</body>
+</html>
