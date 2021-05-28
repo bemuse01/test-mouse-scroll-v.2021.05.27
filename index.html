@@ -24,6 +24,18 @@
                 >
                 </div>
             </div>
+            <div class="button-container">
+                <div
+                    v-for="i in element.scene.group"
+                    :key="i.key"
+                    class="button"
+                    @click="element.scene.click(i.key)"
+                >
+                    <div class="button-hover">
+                        <div :class="`button-size ${element.scene.currentKey === i.key ? 'button-clicked' : ''}`"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="assets/js/main/main.js" type="module"></script>

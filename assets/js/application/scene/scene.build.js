@@ -61,4 +61,13 @@ export default class{
         const y = this.currentKey * (-100 / this.group.length)
         this.style.transform = `translate(0, ${y}%)`
     }
+
+
+    // on click button
+    click(key){
+        const y = key * (-100 / this.group.length)
+        this.style.transform = `translate(0, ${y}%)`
+
+        this.currentKey = key
+    }
 }
