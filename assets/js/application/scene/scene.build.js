@@ -11,13 +11,20 @@ export default class{
 
     // init
     init(){
+        this.currentKey = 0
+
         this.throttle = 1000
 
         this.modules = {
             first: FIRST, 
             second: SECOND, 
             third: THIRD
-        } 
+        }
+
+        this.style = {
+            transition: 'transform 0.6s',
+            transform: 'translate(0, 0)'
+        }
 
         this.group = []
 
@@ -38,6 +45,20 @@ export default class{
 
     // on mouse wheel
     onWheel(e){
-        console.log('work')
+        const {deltaY} = e
+
+        if(deltaY < 0){
+            this.currentKey -= 1
+            this.currentKey = Math.max(0, this.currentKey)
+        }else{
+            this.currentKey += 1
+            this.currentKey = Math.min(this.group.length - 1, this.currentKey)
+        }
+
+        this.onWheelChangeStyle()
+    }
+    onWheelChangeStyle(){
+        const y = this.currentKey * (-100 / this.group.length)
+        this.style.transform = `translate(0, ${y}%)`
     }
 }

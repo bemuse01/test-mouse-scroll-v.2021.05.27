@@ -12,18 +12,11 @@ export default class{
 
     // create
     create(){
-        this.element = {
-            name: 'first',
-            _class: 'scene-first',
-            style: {
-                background: 'hsl(0, 100%, 90%)'
-            }
+        this.key = 0
+        this.name = 'first'
+        this._class = 'scene-first'
+        this.style = {
+            background: 'hsl(0, 100%, 90%)'
         }
-    }
-
-
-    // get
-    get(){
-        return this.element
     }
 }

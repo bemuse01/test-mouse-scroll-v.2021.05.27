@@ -16,6 +16,10 @@ div#wrap{
 
 
 /* scene */
+div.scene-container{
+    width: 100vw;
+    height: auto;
+}
 div.scene{
     position: relative;
     width: 100vw;

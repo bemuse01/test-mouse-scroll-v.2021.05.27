@@ -15,11 +15,14 @@
 <body>
     <div id="wrap">
         <div id="element">
-            <div 
-                v-for="i in element.scene.group"
-                :class="`scene ${i.get()._class}`"
-                :style="i.get().style"
-            >
+            <div class="scene-container" :style="element.scene.style">
+                <div 
+                    v-for="i in element.scene.group"
+                    :key="i.key"
+                    :class="`scene ${i._class}`"
+                    :style="i.style"
+                >
+                </div>
             </div>
         </div>
     </div>
